@@ -75,3 +75,4 @@ C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementAp
 C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\System.Data.SQLite.xml
 C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\System.Data.SQLite.dll.config
 C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\obj\Debug\ManagementApp.csprojResolveAssemblyReference.cache
+C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\App_Data\ManagementApp.sqlite

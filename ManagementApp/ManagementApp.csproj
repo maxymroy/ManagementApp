@@ -237,6 +237,9 @@
     <Content Include="DataContext\ManagementAppDataContext.edmx.diagram">
       <DependentUpon>ManagementAppDataContext.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Data\ManagementApp.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
@@ -282,9 +285,7 @@
     <Content Include="Views\Budget\EditBudgetItem.cshtml" />
     <Content Include="Views\Budget\AddExpense.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
