@@ -68,7 +68,6 @@ c:\users\royma3\documents\visual studio 2017\Projects\ManagementApp\ManagementAp
 c:\users\royma3\documents\visual studio 2017\Projects\ManagementApp\ManagementApp\bin\EntityFramework.SqlServer.dll
 c:\users\royma3\documents\visual studio 2017\Projects\ManagementApp\ManagementApp\bin\EntityFramework.xml
 c:\users\royma3\documents\visual studio 2017\Projects\ManagementApp\ManagementApp\bin\EntityFramework.SqlServer.xml
-C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\SQLite\ManagementApp.sqlite
 C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\System.Data.SQLite.dll
 C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\System.Data.SQLite.EF6.dll
 C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\bin\System.Data.SQLite.Linq.dll

@@ -14,11 +14,28 @@ namespace ManagementApp.Controllers
         // GET: Budget
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult ExpenseManager()
+        {
             ViewData["Message"] = "Your budget manager page.";
             var budgetRepository = new BudgetRepository();
             var budget = budgetRepository.GetBudget();
 
             return View(budget);
+        }
+
+        [HttpPost]
+        public ActionResult ExpenseManager(ExpenseManagingViewModel item)
+        {
+            if (ModelState.IsValid)
+            {
+                var budgetRepository = new BudgetRepository();
+
+                budgetRepository.AddBudgetItem(item.BudgetItem);
+            }
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -30,18 +47,8 @@ namespace ManagementApp.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult Index(ExpenseManagingViewModel item)
-        {
-            if (ModelState.IsValid)
-            {
-                var budgetRepository = new BudgetRepository();
 
-                budgetRepository.AddBudgetItem(item.BudgetItem);
-            }
-            return RedirectToAction("Index");
-        }
-        public ActionResult EditBudgetItem(int id)
+        public ActionResult EditExpense(int id)
         {
             var budgetRepository = new BudgetRepository();
             var budgetItem = budgetRepository.FindBudgetItem(id);
@@ -51,7 +58,7 @@ namespace ManagementApp.Controllers
         [HttpPost]
         [ActionName("EditBudgetItem")]
         [ValidateAntiForgeryToken]
-        public ActionResult EditBudgetItem(ExpenseManagingViewModel item)
+        public ActionResult EditExpense(ExpenseManagingViewModel item)
         {
             if (ModelState.IsValid)
             {
@@ -60,6 +67,12 @@ namespace ManagementApp.Controllers
                 return RedirectToAction("Index");
             }
             return View(item);
+        }
+
+
+        public ActionResult IncomeManager()
+        {
+            return View();
         }
     }
 

@@ -277,13 +277,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Budget\Index.cshtml" />
+    <Content Include="Views\Budget\ExpenseManager.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Budget.cshtml" />
-    <Content Include="SQLite\ManagementApp.sqlite">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\Budget\EditBudgetItem.cshtml" />
+    <Content Include="Views\Budget\EditExpense.cshtml" />
     <Content Include="Views\Budget\AddExpense.cshtml" />
+    <Content Include="Views\Budget\Index.cshtml" />
+    <Content Include="Views\Budget\IncomeManager.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

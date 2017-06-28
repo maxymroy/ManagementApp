@@ -13,7 +13,7 @@
         @foreach (var item in Model.Expenses)
         {
             <tr>
-                <td>@Html.ActionLink(item.Description, "EditBudgetItem", "Budget", new { item.ID }, null)</td>
+                <td>@Html.ActionLink(item.Description, "EditExpense", "Budget", new { item.ID }, null)</td>
                 <td>@Html.DisplayFor(m => item.BiWeekly)$</td>
                 <td>@Html.DisplayFor(m => item.Monthly)$</td>
                 <td>@Html.DisplayFor(m => item.Yearly)$</td>
