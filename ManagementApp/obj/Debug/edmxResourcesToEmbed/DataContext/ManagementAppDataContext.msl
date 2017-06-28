@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="mainEntities">
+    <EntitySetMapping Name="Budget">
+      <EntityTypeMapping TypeName="mainModel.Budget">
+        <MappingFragment StoreEntitySet="Budget">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frequency_">
+      <EntityTypeMapping TypeName="mainModel.Frequency_">
+        <MappingFragment StoreEntitySet="Frequency ">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pants">
+      <EntityTypeMapping TypeName="mainModel.Pants">
+        <MappingFragment StoreEntitySet="Pants">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shirt">
+      <EntityTypeMapping TypeName="mainModel.Shirt">
+        <MappingFragment StoreEntitySet="Shirt">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shoes">
+      <EntityTypeMapping TypeName="mainModel.Shoes">
+        <MappingFragment StoreEntitySet="Shoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tie">
+      <EntityTypeMapping TypeName="mainModel.Tie">
+        <MappingFragment StoreEntitySet="Tie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

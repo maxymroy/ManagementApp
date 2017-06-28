@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=&quot;C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\SQLite\ManagementApp.sqlite&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Budget">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Amount" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="Indicator" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Frequency ">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Indicator" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Brand" Type="integer" Nullable="false" />
+          <Property Name="Color" Type="integer" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Shirt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Brand" Type="integer" Nullable="false" />
+          <Property Name="Color" Type="integer" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Shoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Brand" Type="integer" Nullable="false" />
+          <Property Name="Type" Type="integer" Nullable="false" />
+          <Property Name="Color" Type="integer" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Tie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Brand" Type="integer" Nullable="false" />
+          <Property Name="Color" Type="integer" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityContainer Name="mainModelStoreContainer">
+          <EntitySet Name="Budget" EntityType="Self.Budget" store:Type="Tables" />
+          <EntitySet Name="Frequency " EntityType="Self.Frequency " store:Type="Tables" />
+          <EntitySet Name="Pants" EntityType="Self.Pants" store:Type="Tables" />
+          <EntitySet Name="Shirt" EntityType="Self.Shirt" store:Type="Tables" />
+          <EntitySet Name="Shoes" EntityType="Self.Shoes" store:Type="Tables" />
+          <EntitySet Name="Tie" EntityType="Self.Tie" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Budget">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="Indicator" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Frequency_">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Indicator" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pants">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Brand" Type="Int64" Nullable="false" />
+          <Property Name="Color" Type="Int64" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Shirt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Brand" Type="Int64" Nullable="false" />
+          <Property Name="Color" Type="Int64" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Shoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Brand" Type="Int64" Nullable="false" />
+          <Property Name="Type" Type="Int64" Nullable="false" />
+          <Property Name="Color" Type="Int64" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Brand" Type="Int64" Nullable="false" />
+          <Property Name="Color" Type="Int64" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="mainEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Budget" EntityType="Self.Budget" />
+          <EntitySet Name="Frequency_" EntityType="Self.Frequency_" />
+          <EntitySet Name="Pants" EntityType="Self.Pants" />
+          <EntitySet Name="Shirt" EntityType="Self.Shirt" />
+          <EntitySet Name="Shoes" EntityType="Self.Shoes" />
+          <EntitySet Name="Tie" EntityType="Self.Tie" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="mainEntities">
+          <EntitySetMapping Name="Budget">
+            <EntityTypeMapping TypeName="mainModel.Budget">
+              <MappingFragment StoreEntitySet="Budget">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frequency_">
+            <EntityTypeMapping TypeName="mainModel.Frequency_">
+              <MappingFragment StoreEntitySet="Frequency ">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pants">
+            <EntityTypeMapping TypeName="mainModel.Pants">
+              <MappingFragment StoreEntitySet="Pants">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shirt">
+            <EntityTypeMapping TypeName="mainModel.Shirt">
+              <MappingFragment StoreEntitySet="Shirt">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shoes">
+            <EntityTypeMapping TypeName="mainModel.Shoes">
+              <MappingFragment StoreEntitySet="Shoes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tie">
+            <EntityTypeMapping TypeName="mainModel.Tie">
+              <MappingFragment StoreEntitySet="Tie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

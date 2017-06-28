@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=&quot;C:\Users\royma3\Documents\Visual Studio 2017\Projects\ManagementApp\ManagementApp\SQLite\ManagementApp.sqlite&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Budget">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Amount" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="Indicator" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Frequency ">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Indicator" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pants">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Brand" Type="integer" Nullable="false" />
+    <Property Name="Color" Type="integer" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Shirt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Brand" Type="integer" Nullable="false" />
+    <Property Name="Color" Type="integer" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Shoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Brand" Type="integer" Nullable="false" />
+    <Property Name="Type" Type="integer" Nullable="false" />
+    <Property Name="Color" Type="integer" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Tie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Brand" Type="integer" Nullable="false" />
+    <Property Name="Color" Type="integer" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityContainer Name="mainModelStoreContainer">
+    <EntitySet Name="Budget" EntityType="Self.Budget" store:Type="Tables" />
+    <EntitySet Name="Frequency " EntityType="Self.Frequency " store:Type="Tables" />
+    <EntitySet Name="Pants" EntityType="Self.Pants" store:Type="Tables" />
+    <EntitySet Name="Shirt" EntityType="Self.Shirt" store:Type="Tables" />
+    <EntitySet Name="Shoes" EntityType="Self.Shoes" store:Type="Tables" />
+    <EntitySet Name="Tie" EntityType="Self.Tie" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
