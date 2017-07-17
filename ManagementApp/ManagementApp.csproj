@@ -162,10 +162,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BudgetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataContext\Budget.cs">
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DataContext\Expenses.cs">
       <DependentUpon>ManagementAppDataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataContext\Frequency_.cs">
+    <Compile Include="DataContext\Frequencies.cs">
       <DependentUpon>ManagementAppDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DataContext\ManagementAppDataContext.Context.cs">
@@ -183,32 +184,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ManagementAppDataContext.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DataContext\Pants.cs">
-      <DependentUpon>ManagementAppDataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataContext\Shirt.cs">
-      <DependentUpon>ManagementAppDataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataContext\Shoes.cs">
-      <DependentUpon>ManagementAppDataContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataContext\Tie.cs">
+    <Compile Include="DataContext\Users.cs">
       <DependentUpon>ManagementAppDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DecimalModelBinder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BudgetItem.cs" />
+    <Compile Include="Models\ExpenseItem.cs" />
     <Compile Include="Models\Indicators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\BudgetRepository.cs" />
+    <Compile Include="Repositories\ExpenseRepository.cs" />
     <Compile Include="Repositories\FrequencyRepository.cs" />
-    <Compile Include="ViewModels\BudgetViewModel.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="ViewModels\ExpenseViewModel.cs" />
     <Compile Include="ViewModels\ExpenseGridViewModel.cs" />
     <Compile Include="ViewModels\ExpenseManagingViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ManagementDB.mdf" />
+    <Content Include="App_Data\ManagementDB_log.ldf">
+      <DependentUpon>ManagementDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DataContext\ManagementAppDataContext.Context.tt">
@@ -230,15 +227,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\ManagementApp.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EntityDeploy Include="DataContext\ManagementAppDataContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ManagementAppDataContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="DataContext\ManagementAppDataContext.edmx.diagram">
       <DependentUpon>ManagementAppDataContext.edmx</DependentUpon>
-    </Content>
-    <Content Include="App_Data\ManagementApp.sqlite">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\cldr.js" />
@@ -283,8 +280,11 @@
     <Content Include="Views\Budget\AddExpense.cshtml" />
     <Content Include="Views\Budget\Index.cshtml" />
     <Content Include="Views\Budget\IncomeManager.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\NewFolder1\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>

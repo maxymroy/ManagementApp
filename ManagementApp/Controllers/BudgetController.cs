@@ -19,11 +19,11 @@ namespace ManagementApp.Controllers
 
         public ActionResult ExpenseManager()
         {
-            ViewData["Message"] = "Your budget manager page.";
-            var budgetRepository = new BudgetRepository();
-            var budget = budgetRepository.GetBudget();
+            ViewData["Message"] = "Your expense manager page.";
+            var expenseRepository = new ExpenseRepository();
+            var expenses = expenseRepository.GetExpenses();
 
-            return View(budget);
+            return View(expenses);
         }
 
         [HttpPost]
@@ -31,40 +31,40 @@ namespace ManagementApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var budgetRepository = new BudgetRepository();
+                var expenseRepository = new ExpenseRepository();
 
-                budgetRepository.AddBudgetItem(item.BudgetItem);
+                expenseRepository.AddExpense(item.ExpenseItem);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("ExpenseManager");
         }
 
         [HttpPost]
         public ActionResult DeleteExpense(string id)
         {
-            var budgetRepository = new BudgetRepository();
-            budgetRepository.DeleteBudgetItem(Convert.ToInt32(id));
+            var expenseRepository = new ExpenseRepository();
+            expenseRepository.DeleteExpense(Convert.ToInt32(id));
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ExpenseManager");
         }
 
 
         public ActionResult EditExpense(int id)
         {
-            var budgetRepository = new BudgetRepository();
-            var budgetItem = budgetRepository.FindBudgetItem(id);
-            var viewModel = new ExpenseManagingViewModel(budgetItem);
+            var expenseRepository = new ExpenseRepository();
+            var expenseItem = expenseRepository.FindExpense(id);
+            var viewModel = new ExpenseManagingViewModel(expenseItem);
             return View(viewModel);
         }
         [HttpPost]
-        [ActionName("EditBudgetItem")]
+        [ActionName("EditExpense")]
         [ValidateAntiForgeryToken]
         public ActionResult EditExpense(ExpenseManagingViewModel item)
         {
             if (ModelState.IsValid)
             {
-                var budgetRepository = new BudgetRepository();
-                budgetRepository.EditBudgetItem(item.BudgetItem);
-                return RedirectToAction("Index");
+                var expenseRepository = new ExpenseRepository();
+                expenseRepository.EditExpense(item.ExpenseItem);
+                return RedirectToAction("ExpenseManager");
             }
             return View(item);
         }

@@ -1,4 +1,6 @@
-﻿using ManagementApp.Models;
+﻿using ManagementApp.DataContext;
+using ManagementApp.Models;
+using ManagementApp.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,17 +11,23 @@ namespace ManagementApp.ViewModels
 {
     public class ExpenseGridViewModel
     {
-        public IList<BudgetItem> Expenses { get; set; }
+        public IList<ExpenseItem> Expenses { get; set; }
+        public Users User { get; set; }
 
+        public ExpenseGridViewModel(int user_id)
+        {
+            this.User = new UserRepository().GetUser(user_id);
+            this.Expenses = new ExpenseRepository().GetUserExpenses(user_id);
+        }
         public ExpenseGridViewModel()
         {
-            this.Expenses = new List<BudgetItem>();
+            this.Expenses = new List<ExpenseItem>();
         }
         public decimal BiWeeklyTotal {
             get
             {
                 decimal total = 0;
-                foreach(var expense in Expenses)
+                foreach(var expense in Expenses.Where(m=>m.User_Id == this.User.Id))
                 {
                     total += expense.BiWeekly;
                 }
@@ -31,7 +39,7 @@ namespace ManagementApp.ViewModels
             get
             {
                 decimal total = 0;
-                foreach (var expense in Expenses)
+                foreach (var expense in Expenses.Where(m => m.User_Id == this.User.Id))
                 {
                     total += expense.Monthly;
                 }
@@ -43,7 +51,7 @@ namespace ManagementApp.ViewModels
             get
             {
                 decimal total = 0;
-                foreach (var expense in Expenses)
+                foreach (var expense in Expenses.Where(m => m.User_Id == this.User.Id))
                 {
                     total += expense.Yearly;
                 }

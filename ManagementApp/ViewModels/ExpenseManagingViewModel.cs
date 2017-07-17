@@ -10,18 +10,20 @@ namespace ManagementApp.ViewModels
 {
     public class ExpenseManagingViewModel
     {
-        public IEnumerable<Frequency_> Frequency { get; set; }
-        public BudgetItem BudgetItem { get; set; }
+        public IEnumerable<Frequencies> Frequencies { get; set; }
+        public IEnumerable<Users> Users { get; set; }
+        public ExpenseItem ExpenseItem { get; set; }
 
         public ExpenseManagingViewModel()
         {
 
         }
 
-        public ExpenseManagingViewModel(BudgetItem budgetitem)
+        public ExpenseManagingViewModel(ExpenseItem expenseItem)
         {
-            this.Frequency = new FrequencyRepository().GetAllIndicators();
-            this.BudgetItem = budgetitem;
+            this.Frequencies = new FrequencyRepository().GetAllIndicators();
+            this.Users = new UserRepository().GetAllUsers();
+            this.ExpenseItem = expenseItem;
         }
     }
 }

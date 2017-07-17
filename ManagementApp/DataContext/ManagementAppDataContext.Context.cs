@@ -13,10 +13,10 @@ namespace ManagementApp.DataContext
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class mainEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public mainEntities()
-            : base("name=mainEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,11 +25,8 @@ namespace ManagementApp.DataContext
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Budget> Budget { get; set; }
-        public virtual DbSet<Frequency_> Frequency_ { get; set; }
-        public virtual DbSet<Pants> Pants { get; set; }
-        public virtual DbSet<Shirt> Shirt { get; set; }
-        public virtual DbSet<Shoes> Shoes { get; set; }
-        public virtual DbSet<Tie> Tie { get; set; }
+        public virtual DbSet<Expenses> Expenses { get; set; }
+        public virtual DbSet<Frequencies> Frequencies { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

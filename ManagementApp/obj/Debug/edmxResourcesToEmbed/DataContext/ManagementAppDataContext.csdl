@@ -1,65 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Budget">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Amount" Type="Decimal" Precision="19" Scale="2" />
-    <Property Name="Indicator" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-  </EntityType>
-  <EntityType Name="Frequency_">
+<Schema Namespace="ManagementDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Expenses">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" />
-    <Property Name="Indicator" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Frequency" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="Pants">
+  <EntityType Name="Frequencies">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" />
-    <Property Name="Brand" Type="Int64" Nullable="false" />
-    <Property Name="Color" Type="Int64" Nullable="false" />
-    <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
-  <EntityType Name="Shirt">
+  <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" />
-    <Property Name="Brand" Type="Int64" Nullable="false" />
-    <Property Name="Color" Type="Int64" Nullable="false" />
-    <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="Shoes">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" />
-    <Property Name="Brand" Type="Int64" Nullable="false" />
-    <Property Name="Type" Type="Int64" Nullable="false" />
-    <Property Name="Color" Type="Int64" Nullable="false" />
-    <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="Tie">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" />
-    <Property Name="Brand" Type="Int64" Nullable="false" />
-    <Property Name="Color" Type="Int64" Nullable="false" />
-    <Property Name="Note" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityContainer Name="mainEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Budget" EntityType="Self.Budget" />
-    <EntitySet Name="Frequency_" EntityType="Self.Frequency_" />
-    <EntitySet Name="Pants" EntityType="Self.Pants" />
-    <EntitySet Name="Shirt" EntityType="Self.Shirt" />
-    <EntitySet Name="Shoes" EntityType="Self.Shoes" />
-    <EntitySet Name="Tie" EntityType="Self.Tie" />
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Expenses" EntityType="Self.Expenses" />
+    <EntitySet Name="Frequencies" EntityType="Self.Frequencies" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
   </EntityContainer>
 </Schema>

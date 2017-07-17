@@ -9,11 +9,11 @@ namespace ManagementApp.Repositories
 {
     public class FrequencyRepository
     {
-        public IEnumerable<Frequency_> GetAllIndicators()
+        public IEnumerable<Frequencies> GetAllIndicators()
         {
-            using (var DataContext = new mainEntities())
+            using (var DataContext = new Entities())
             {
-                return DataContext.Frequency_.ToList();
+                return DataContext.Frequencies.ToList();
             }
         }
     }

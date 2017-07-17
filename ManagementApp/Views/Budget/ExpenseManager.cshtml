@@ -1,22 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Expense Manager";
 }
-@model ManagementApp.ViewModels.BudgetViewModel
+@model ManagementApp.ViewModels.ExpenseViewModel
 
 <h2>@ViewData["Title"]</h2>
 
 <div class="container">
     <div class="row">
-        @Html.DisplayFor(Model => Model.Budget, "Budget")
+        @foreach (var user in Model.Users)
+        {
+            ManagementApp.ViewModels.ExpenseGridViewModel bla = new ManagementApp.ViewModels.ExpenseGridViewModel(user.Id);
+            @Html.DisplayFor(x=> bla, "Budget")
+        }
+        </div>
+        <div class="row">
+            <h2>Add A New Expense</h2>
+            @Html.Partial("AddExpense", new ManagementApp.ViewModels.ExpenseManagingViewModel(new ManagementApp.Models.ExpenseItem(new Random().Next(), "Your description", 0m, 'Y', 0)))
+        </div>
     </div>
-    <div class="row">
-        <h2>Add A New Expense</h2>
-            @Html.Partial("AddExpense", new ManagementApp.ViewModels.ExpenseManagingViewModel(new ManagementApp.Models.BudgetItem(new Random().Next(),"Your description",0m,'Y')))
-    </div>
-</div>
 
-@section Scripts {
-    <script type="text/javascript">
+    @section Scripts {
+        <script type="text/javascript">
         function validateFloatKeyPress(el, evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode;
             var number = el.value.split('.');
@@ -78,5 +82,5 @@
                 return (this.optional(element) || Globalize.parseDate(value));
             }
         });
-    </script>
-}
+        </script>
+    }
